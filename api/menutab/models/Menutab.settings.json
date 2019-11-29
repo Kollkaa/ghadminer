@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "menutab",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "href": {
+      "type": "string"
+    },
+    "menubar": {
+      "model": "menubar",
+      "via": "menutabs"
+    }
+  }
+}

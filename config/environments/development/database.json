@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "host": "192.168.0.25",
+        "port": 27017,
+        "database": "app",
+        "username": "",
+        "password": ""
+      },
+      "options": {}
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "menubar",
+  "info": {
+    "name": "menubar",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "place": {
+      "enum": [
+        "main",
+        "side"
+      ],
+      "type": "enumeration",
+      "default": "main"
+    },
+    "href": {
+      "type": "string"
+    },
+    "menutabs": {
+      "collection": "menutab",
+      "via": "menubar"
+    }
+  }
+}

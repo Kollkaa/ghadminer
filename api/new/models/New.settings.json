@@ -1,0 +1,37 @@
+{
+  "connection": "default",
+  "collectionName": "new",
+  "info": {
+    "name": "new",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "type": {
+      "enum": [
+        "slider",
+        "primary",
+        "secondary"
+      ],
+      "type": "enumeration",
+      "default": "slider"
+    },
+    "description": {
+      "maxLength": 60,
+      "type": "string"
+    }
+  }
+}
