@@ -39,7 +39,8 @@
     "redux": "^4.0.1",
     "remove-markdown": "^0.2.2",
     "shelljs": "^0.7.8",
-    "video-react": "^0.13.2"
+    "video-react": "^0.13.2",
+    "immutable":"3.8.2"
   },
   "deprecated": false,
   "description": "Strapi Admin",
