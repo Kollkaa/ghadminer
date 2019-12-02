@@ -17,23 +17,12 @@ defineMessages(messages);
 function LeftMenuFooter({ version }) { // eslint-disable-line react/prefer-stateless-function
   return (
     <div className={styles.leftMenuFooter}>
-      <ul className={styles.list}>
-        <LeftMenuLink
-          icon="book"
-          label={messages.documentation.id}
-          destination="https://strapi.io/documentation"
-        />
-        <LeftMenuLink
-          icon="question-circle"
-          label={messages.help.id}
-          destination="https://strapi.io/help"
-        />
-      </ul>
-      <div className={styles.poweredBy}>
-        <FormattedMessage {...messages.poweredBy} />
-        <a href="https://strapi.io" target="_blank">Strapi</a> <a href={`https://github.com/strapi/strapi/releases/tag/v${version}`} target="_blank">v{version}</a>
-      </div>
-    </div>
+
+    <div>
+    <div><a href="http://192.168.0.25" className={styles.poweredBy}>Генеральний штаб ЗС України</a></div>
+  <div><label className={styles.poweredBy} >version:0.0.1.beta</label></div>
+  </div>
+  </div>
   );
 }
 
