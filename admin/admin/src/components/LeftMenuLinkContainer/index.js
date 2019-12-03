@@ -16,7 +16,7 @@ import messages from './messages.json';
 
 function LeftMenuLinkContainer({ layout, plugins }) {
   const pluginsObject = plugins.toJS();
-  
+
   // Generate the list of sections
   const pluginsSections = Object.keys(pluginsObject).reduce((acc, current) => {
     pluginsObject[current].leftMenuSections.forEach((section = {}) => {
@@ -39,7 +39,7 @@ function LeftMenuLinkContainer({ layout, plugins }) {
 
     return acc;
   }, {});
-  
+
   const linkSections = Object.keys(pluginsSections).map((current, j) => {
     const contentTypesToShow = get(layout, 'contentTypesToShow');
     const contentTypes = contentTypesToShow
@@ -50,7 +50,7 @@ function LeftMenuLinkContainer({ layout, plugins }) {
 
     return (
       <div key={j}>
-        <p className={styles.title}>{pluginsSections[current].name}</p>
+        <p className={styles.title}>Тип контенту</p>
         <ul className={styles.list}>
           {sortBy(contentTypes, 'label').map((link, i) => (
             <LeftMenuLink

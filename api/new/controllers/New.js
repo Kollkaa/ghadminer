@@ -125,7 +125,7 @@ module.exports = {
     try {
       let ar=parseInt(ctx.url.split("=")[1]);
       if(ar.isNaN())
-      { secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:25});
+      { secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0},limit:25});
         console.log("try"+25);}
       else{
         console.log("try"+ar);
