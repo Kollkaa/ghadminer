@@ -6,18 +6,13 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import Helmet from "react-helmet";
-import { FormattedMessage } from "react-intl";
+
 import { bindActionCreators, compose } from "redux";
 import { createStructuredSelector } from "reselect";
 import PropTypes from "prop-types";
-import { get, isEmpty, upperFirst } from "lodash";
-import cn from "classnames";
+import DatePicker from "react-day-picker";
 
-import Button from "components/Button";
-import Input from "components/InputText";
-import auth from "utils/auth";
-import validateInput from "utils/inputsValidations";
+import "react-day-picker/lib/style.css";
 
 import { selectPlugins } from "../App/selectors";
 
@@ -28,41 +23,46 @@ import { getArticles, onChange, submit } from "./actions";
 import makeSelectHomePage from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
-import styles from "./styles.scss";
-import { isContext } from "vm";
+
 
 import pages from "../../assets/images/dashboard/pages.png";
 import hackers from "../../assets/images/dashboard/hackers.png";
 import users from "../../assets/images/dashboard/visits.png";
 import active from "../../assets/images/dashboard/active.png";
-import calendar from "../../assets/images/dashboard/calendar.png";
 import chart from "../../assets/images/dashboard/chart.png";
 import world from "../../assets/images/dashboard/world-report.png";
 
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
-  state = { errors: [] };
+  state = {
+    startDate: new Date()
+  };
+
+  handleChange = date => {
+    this.setState({
+      startDate: date
+    });
+  };
 
   render() {
-    return (
-      <div className={cn("container-fluid", styles.containerFluid)}>
-        <Helmet title="Головна" />
-        <div className="row">
-          {/* Content Wrapper. Contains page content */}
-          <span>
-            <img src={pages} />
-            <img src={hackers} />
-            <img src={users} />
-          </span>
+    return (<div>
 
-          <img src={chart} />
-          <img src={calendar} />
-          <img src={active} />
-          <img src={world} />
-          {/* /.content-wrapper */}
-        </div>
-      </div>
-    );
+
+      <span>
+      <img src={pages} />
+    <img src={hackers} />
+    <img src={users} />
+  </span>
+        <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+        />
+
+  <a href="http://localhost:1337/admin"> <img src={chart} /></a>
+  <img src={active} />
+  <img src={world} />
+    </div>
+  );
   }
 }
 
