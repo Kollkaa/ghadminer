@@ -14,7 +14,7 @@ module.exports = {
    * @return {Object|Array}
    */
 
- find: async (ctx, next, {populate} = {}) => {
+  find: async (ctx, next, {populate} = {}) => {
     let url = "mongodb://192.168.0.25:27017/strapi";
     let db = require("monk")(url);
     let collection = db.get("new",{sort:{createdAt:-1}});
@@ -77,7 +77,7 @@ module.exports = {
   destroy: async (ctx, next) => {
     return strapi.services.new.remove(ctx.params);
   },
-slider:async (ctx)=>{
+  slider:async (ctx)=>{
     let url = "mongodb://192.168.0.25:27017/app";
     let db = require("monk")(url);
     console.log("db_state", db._state);
@@ -91,13 +91,13 @@ slider:async (ctx)=>{
     let collection_files = db.get("upload_file");
 
 
-      for (let i = 0;i < slider.length;i++){
-        console.log(slider[i]._id);
+    for (let i = 0;i < slider.length;i++){
+      console.log(slider[i]._id);
 
-        let img = await collection_files.findOne({related: {$elemMatch: {ref: slider[i]._id}}});
+      let img = await collection_files.findOne({related: {$elemMatch: {ref: slider[i]._id}}});
 
-        slider[i].imgRef = img;
-      }
+      slider[i].imgRef = img;
+    }
 
     console.log(slider);
 
@@ -124,17 +124,17 @@ slider:async (ctx)=>{
     console.log(ctx.url);
     try {
       let ar=parseInt(ctx.url.split("=")[1]);
-        if(ar.isNaN())
-        { secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:25});
+      if(ar.isNaN())
+      { secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:25});
         console.log("try"+25);}
-    else{
-    console.log("try"+ar);
-       secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content:0,updatedAt: 0},limit:ar});
-    }
+      else{
+        console.log("try"+ar);
+        secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content:0,updatedAt: 0},limit:ar});
+      }
     }catch (e) {
 
-       secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:25});
-        console.log("catch"+25);
+      secondary=await collection3.find({type:'secondary'},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:25});
+      console.log("catch"+25);
     }
 
 
@@ -142,7 +142,7 @@ slider:async (ctx)=>{
     ctx.send(secondary);
 
   },
-result: async (ctx) => {
+  result: async (ctx) => {
 
 
     const fetch = require('isomorphic-fetch');
@@ -167,7 +167,7 @@ result: async (ctx) => {
         .then(text => secondary = text);
     }
     catch(e){
-        console.log('catch25');
+      console.log('catch25');
       await fetch('http://192.168.0.231:1337/slider')
         .then(res => res.json())
         .then(text => slider = text);
@@ -177,7 +177,7 @@ result: async (ctx) => {
       await fetch('http://192.168.0.231:1337/secondary')
         .then(res => res.json())
         .then(text => secondary = text);
-      }
+    }
 
     result=[...JSON.parse(slider), ...JSON.parse(secondary), ...JSON.parse(primary)];
     console.log(result);

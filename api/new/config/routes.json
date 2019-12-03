@@ -1,6 +1,6 @@
 {
   "routes": [
-      {
+    {
       "method": "GET",
       "path": "/news",
       "handler": "New.result"
@@ -13,7 +13,7 @@
         "policies": []
       }
     },
-     {
+    {
       "method": "GET",
       "path": "/slider",
       "handler": "New.slider"

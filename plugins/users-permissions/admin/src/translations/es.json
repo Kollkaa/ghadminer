@@ -67,7 +67,7 @@
   "EditPage.form.roles": "Деталі ролі",
   "EditPage.form.roles.label.description": "Опис",
   "EditPage.form.roles.label.name": "Назва",
-  "EditPage.form.roles.label.users": "Користувачі з цією роллю ({number})",@
+  "EditPage.form.roles.label.users": "Користувачі з цією роллю ({number})",
   "EditPage.form.roles.name.error": "Це значення обов´язкове.",
   "EditPage.header.description": "{description} ",
   "EditPage.header.description.create": " ",
@@ -117,7 +117,7 @@
   "PopUpForm.Email.options.response_email.label": "Адреса для відповіді",
   "PopUpForm.Email.options.response_email.placeholder": "johndoe@gmail.com",
   "PopUpForm.Email.reset_password.options.message.placeholder": "<p>Будь ласка, натисніть на покликання, щоб підтвердити ваш обліковий запис</p>",
-  "PopUpForm.Email.reset_password.options.object.placeholder": ""Будь ласка, підтвердіть вашу поштову адресу для %APP_NAME%",
+  "PopUpForm.Email.reset_password.options.object.placeholder": "Будь ласка, підтвердіть вашу поштову адресу для %APP_NAME%",
   "PopUpForm.Email.success_register.options.message.placeholder": "<p>Будь ласка, натисніть на покликання, щоб підтвердити ваш обліковий запис</p>",
   "PopUpForm.Email.success_register.options.object.placeholder": "Будь ласка, підтвердіть вашу поштову адресу для %APP_NAME%",
   "PopUpForm.Email.validation_email.options.message.placeholder": "<p>Будь ласка, натисніть на покликання, щоб підтвердитиваш обліковий запис </p>",

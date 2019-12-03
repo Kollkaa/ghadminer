@@ -10,7 +10,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const _ = require('lodash');
+const lodash = require('lodash');
 
 module.exports = async cb => {
   // set plugin store
@@ -25,9 +25,9 @@ module.exports = async cb => {
   const loadProviders = (basePath, cb) => {
     fs.readdir(path.join(basePath, 'node_modules'), async (err, node_modules) => {
       // get all email providers
-      const emails = _.filter(node_modules, (node_module) => {
+      const emails = lodash.filter(node_modules, (node_module) => {
         // DEPRECATED strapi-email-* will be remove in next version
-        return _.startsWith(node_module, 'strapi-provider-email') || _.startsWith(node_module, 'strapi-email');
+        return lodash.startsWith(node_module, 'strapi-provider-email') || lodash.startsWith(node_module, 'strapi-email');
       });
 
       node_modules.filter((node_module) => {
@@ -38,14 +38,14 @@ module.exports = async cb => {
 
           node_modules.forEach((node_module) => {
             // DEPRECATED strapi-email-* will be remove in next version
-            if (_.startsWith(node_module, 'strapi-provider-email') || _.startsWith(node_module, 'strapi-email')) {
+            if (lodash.startsWith(node_module, 'strapi-provider-email') || lodash.startsWith(node_module, 'strapi-email')) {
               emails.push(`${orga}/${node_module}`);
             }
           });
         });
 
       // mount all providers to get configs
-      _.forEach(emails, (node_module) => {
+      lodash.forEach(emails, (node_module) => {
         strapi.plugins.email.config.providers.push(
           require(path.join(`${basePath}/node_modules/${node_module}`))
         );
@@ -56,9 +56,9 @@ module.exports = async cb => {
         const config = await pluginStore.get({key: 'provider'});
 
         if (!config) {
-          const provider = _.find(strapi.plugins.email.config.providers, {provider: 'sendmail'});
+          const provider = lodash.find(strapi.plugins.email.config.providers, {provider: 'sendmail'});
 
-          const value = _.assign({}, provider, {
+          const value = lodash.assign({}, provider, {
             // TODO: set other default settings here
           });
 
