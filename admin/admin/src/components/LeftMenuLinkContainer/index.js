@@ -106,12 +106,7 @@ function LeftMenuLinkContainer({ layout, plugins }) {
           <FormattedMessage {...messages.general} />
         </p>
         <ul className={styles.list}>
-          <LeftMenuLink icon="list" label={messages.listPlugins.id} destination="/list-plugins" />
-          <LeftMenuLink
-            icon="shopping-basket"
-            label={messages.installNewPlugin.id}
-            destination="/marketplace"
-          />
+
           {hasSettingsManager && (
             <LeftMenuLink
               icon="gear"

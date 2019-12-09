@@ -7,10 +7,10 @@
   min-width: 44rem;
   height: 6rem;
   padding-right: 20px;
-  background-color: #FFFFFF;
-  border-right: 1px solid #F3F4F4;
+  background-color: #2f2f2f;
+  border-right: 1px solid #2f2f2f;
   z-index: 1050;
-  color: #9EA7B8;
+  color: #ffffff;
   line-height: 6rem;
   letter-spacing: 0;
 
@@ -20,7 +20,7 @@
     height: 16px;
     background-image: url('../../assets/images/icon-search.svg');
     margin-right: 10px;
-    color: #B3B5B9;
+    color: #ffffff;
     vertical-align: middle;
   }
 
@@ -30,7 +30,7 @@
     outline: 0;
 
     &::placeholder {
-      color: #9EA7B8 !important;
+      color: #ffffff !important;
       font-size: 13px !important;
     }
   }
@@ -50,11 +50,11 @@
   margin-left: 20px;
   padding-right: 10px;
   padding-left: 30px;
-  background: rgba(0,126,255,0.08);
-  border: 1px solid rgba(0,126,255,0.24);
+  background: #3c3c3c;
+  border: 1px solid #3c3c3c;
   border-radius: 2px;
   line-height: 22px;
-  color: #007EFF;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;

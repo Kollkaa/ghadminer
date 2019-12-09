@@ -49,7 +49,7 @@ export class LocaleToggle extends React.Component { // eslint-disable-line
 
     return (
       <div className={styles.localeToggle}>
-        <ButtonDropdown isOpen={this.state.isOpen} toggle={this.toggle}>
+        <ButtonDropdown toggle={this.toggle}>
           <DropdownToggle className={styles.localeDropdownContent}>
 
             <img src={this.getFlagUrl(locale)} alt={locale} />

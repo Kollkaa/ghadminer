@@ -10,6 +10,8 @@
   "containers.Edit.seeDetails": "Детальніше",
   "components.FilterOptions.FILTER_TYPES.=": "дорівнює",
   "components.FilterOptions.FILTER_TYPES._contains": "містить",
+  "containers.Edit.Link.Layout": "Налаштуйте макет",
+  "containers.Edit.Link.Fields": "Відредагуйте поля",
   "components.FilterOptions.FILTER_TYPES._containss": "містить (з врахуванням регістру)",
   "components.FilterOptions.FILTER_TYPES._gt": "більше ніж",
   "components.FilterOptions.FILTER_TYPES._gte": "більше або дорівнює",

@@ -46,21 +46,7 @@ export class HomePage extends React.PureComponent {
 
   render() {
     return (<div>
-
-
-      <span>
-      <img src={pages} />
-    <img src={hackers} />
-    <img src={users} />
-  </span>
-        <DatePicker
-          selected={this.state.startDate}
-          onChange={this.handleChange}
-        />
-
-  <a href="http://localhost:1337/admin"> <img src={chart} /></a>
-  <img src={active} />
-  <img src={world} />
+      <img />
     </div>
   );
   }
