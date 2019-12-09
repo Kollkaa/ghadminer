@@ -19,8 +19,8 @@ function LeftMenuFooter({ version }) { // eslint-disable-line react/prefer-state
     <div className={styles.leftMenuFooter}>
 
     <div>
-    <div><a href="http://192.168.0.25" className={styles.poweredBy}>Генеральний штаб ЗС України</a></div>
-  <div><label className={styles.poweredBy} >version:0.0.1.beta</label></div>
+    <div><a href="http://192.168.0.25" className={styles.leftMenuFooter.a}  >Генеральний штаб ЗС України</a></div>
+  <div><a  >version:0.0.1.beta</a></div>
   </div>
   </div>
   );

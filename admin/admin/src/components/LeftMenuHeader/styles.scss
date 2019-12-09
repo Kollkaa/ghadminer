@@ -2,15 +2,13 @@
 @import "../../styles/variables/variables";
 
 .leftMenuHeader { /* stylelint-ignore */
-  background: $left-menu-link-hover;
-  height: $header-height;
-  background: linear-gradient(100deg , #e71504, #000000);
+  height: 60px;
+  background: #2f2f2f;
 }
 
 .projectName {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 75px;
   text-align: center;
   line-height: $header-height;
   vertical-align: middle;
@@ -18,10 +16,14 @@
   letter-spacing: 0.2rem;
   color: $white;
 
-  background-image: url('../../assets/images/logo-strapi.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: auto 3rem;
+}
+.image{
+  margin-left: 90px;
+  border-left: 15px;
+  height: 60px;
 }
 
 .leftMenuHeaderLink {
