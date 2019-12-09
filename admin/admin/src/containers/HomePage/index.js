@@ -25,7 +25,7 @@ import reducer from "./reducer";
 import saga from "./saga";
 
 
-import pages from "../../assets/images/dashboard/pages.png";
+import pages from "../../assets/images/logo-strapi.png.png";
 import hackers from "../../assets/images/dashboard/hackers.png";
 import users from "../../assets/images/dashboard/visits.png";
 import active from "../../assets/images/dashboard/active.png";
@@ -45,8 +45,8 @@ export class HomePage extends React.PureComponent {
   };
 
   render() {
-    return (<div>
-      <img />
+    return (<div className={}>
+      <img src={pages} />
     </div>
   );
   }
