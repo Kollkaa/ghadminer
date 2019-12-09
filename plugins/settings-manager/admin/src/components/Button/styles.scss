@@ -36,17 +36,18 @@
 }
 
 .primary {
-  font-weight: 500;
-  background: linear-gradient(315deg, #0097F6 0%, #005EEA 100%);
-  -webkit-font-smoothing: antialiased;
-  color: white;
+  color: #fbfcff;
+  border: 0.1rem solid #2ef600;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
   &:active {
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,.15);
+    border: 0.15rem solid #2ef600;
   }
 }
 
 .secondary {
-  color: #F64D0A;
+  color: #fbfcff;
   border: 0.1rem solid #F64D0A;
   position: relative;
   border-radius: 3px;
