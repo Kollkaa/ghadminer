@@ -36,6 +36,7 @@ class Logout extends React.Component { // eslint-disable-line react/prefer-state
       <div className={styles.logout}>
         <ButtonDropdown isOpen={this.state.isOpen} toggle={this.toggle}>
           <DropdownToggle>
+            <a>Адміністратор  </a>
             {get(auth.getUserInfo(), 'username')}
             <i className="fa fa-caret-down" alt={`${this.state.isOpen}`} />
           </DropdownToggle>
