@@ -3,7 +3,7 @@
   justify-content: space-around;
   text-align: center;
   padding: 6.2rem 0;
-  background: #FAFAFB;
+  background: #292b2c;
   height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -12,7 +12,6 @@
   height: 22.1rem;
   width: 685px;
   text-align: center;
-  background-image: url('../../assets/images/background_empty.svg');
   background-position-x: center;
   font-size: 1.4rem;
   font-family: Lato;
@@ -31,7 +30,7 @@
   }
   > img {
     margin-top: 1px;
-    height: 40px;
+    height: 150px;
   }
 
 }
@@ -41,7 +40,7 @@
   margin: auto;
   padding: 13px 30px 0 30px;
   line-height: 18px;
-  color: #333740;
+  color: #fffff1;
 }
 
 .formContainer {
@@ -51,8 +50,8 @@
   margin-bottom: 0;
   padding: 3.9rem 1.5rem 1.5rem 1.5rem;
   border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px 0 #E3E9F3;
+  background-color: #5a5a5a;
+  box-shadow: 0 2px 4px 0 #2f2f2f;
 }
 
 .loginButton {
@@ -82,7 +81,7 @@
 }
 
 .bordered {
-  border-top: 2px solid #1C5DE7;
+  border-top: 2px solid #2f2f2f;
 }
 
 .borderedSuccess {
@@ -95,7 +94,7 @@
 
   > img {
     height: 150px;
-    width: 150px;
+
   }
 }
 
@@ -114,6 +113,6 @@
   > p {
     margin-top: 17px;
     margin-bottom: 18px;
-    color: #333740;
+    color: #ffffff;
   }
 }

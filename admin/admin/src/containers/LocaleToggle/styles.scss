@@ -12,15 +12,15 @@
       background: transparent;
       border: none;
       border-radius: 0;
-      color: #333740;
+      color: #292b2c;
       font-weight: 500;
       text-align: right;
       cursor: pointer;
       transition: background .2s ease-out;
 
       &:hover, &:focus, &:active {
-        color: #333740;
-        background-color: #FAFAFB !important;
+        color: #292b2c;
+        background-color: #292b2c !important;
       }
 
       > i {
@@ -91,7 +91,7 @@
     font-weight: 500;
     letter-spacing: 0.5;
     &:hover, &:focus, &:active {
-      background-color: #FAFAFB!important;
+      background-color: #292b2c !important;
       border-radius: 0px;
       cursor: pointer;
     }
@@ -102,7 +102,7 @@
     line-height: 50px;
     margin-bottom: 4px;
     &:hover, &:active {
-      color: #333740;
+      color: #292b2c;
     }
   }
 
@@ -118,14 +118,14 @@
 .localeDropdownMenuNotLogged{
   background: transparent !important;
   box-shadow: none !important;
-  border: 1px solid #e3e9f3 !important;
+  border: 1px solid #292b2c !important;
   border-top: 0px !important;
 
   button {
     padding-left: 17px;
 
     &:hover {
-      background-color: #F7F8F8 !important;
+      background-color: #292b2c !important;
     }
   }
 
@@ -140,13 +140,13 @@
     margin-left: 9px;
   }
   &:active {
-    color: black;
+    color: #292b2c;
   }
   &:hover {
-    background-color: #FAFAFB !important;
+    background-color: #292b2c !important;
   }
 }
 
 .localeToggleItemActive {
-  color: #333740 !important;
+  color: #292b2c !important;
 }
