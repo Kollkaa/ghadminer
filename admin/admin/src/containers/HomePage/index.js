@@ -23,14 +23,11 @@ import { getArticles, onChange, submit } from "./actions";
 import makeSelectHomePage from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
+import styles from "../Content/styles.scss";
+import pages from "../../assets/images/logo-strapi.png";
+import  style from "./styles.scss";
 
 
-import pages from "../../assets/images/logo-strapi.png.png";
-import hackers from "../../assets/images/dashboard/hackers.png";
-import users from "../../assets/images/dashboard/visits.png";
-import active from "../../assets/images/dashboard/active.png";
-import chart from "../../assets/images/dashboard/chart.png";
-import world from "../../assets/images/dashboard/world-report.png";
 
 export class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -45,10 +42,12 @@ export class HomePage extends React.PureComponent {
   };
 
   render() {
-    return (<div className={}>
-      <img src={pages} />
+    return(
+    <div className={style.welcomeContentP}>
+      <div><img src={pages}/></div>
+      <div><a>Вас вітає адмінпанель сайту ГШ ЗС України</a></div>
     </div>
-  );
+    );
   }
 }
 

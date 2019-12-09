@@ -255,19 +255,39 @@
 }
 
 .welcomeContentA {
-  color: #005FEA;
+  color: #fffff1;
   text-decoration: none;
   &:hover {
     text-decoration: none;
   }
+  img{
+    margin-left: 50%;
+    margin-top:100px;
+    height: 150px;
+  }
+  a{
+    margin-left: 40%;
+    font-style: italic;
+    font-size: 30px;
+  }
 }
 
 .welcomeContentP {
-  display: block;
-  max-width: 55rem !important;
-  margin-bottom: 31px;
+  background: #2f2f2f;
+  color: #FFFFFF;
   div{
 
+
+  }
+  img{
+  margin-top: 300px;
+    height: 150px;
+  margin-left: 40%;
+  }
+  a{
+    margin-left: 30%;
+    font-size: 30px;
+    font-style: initial;
   }
 }
 

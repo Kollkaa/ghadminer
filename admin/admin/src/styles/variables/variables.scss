@@ -15,15 +15,15 @@ $strapi-blue: #000000;
 // -- left menu
 $left-menu-width: 24rem;
 $left-menu-bg: $strapi-blue-darker;
-$left-menu-link-hover: #898387;
-$left-menu-link-color: #919BAE;
+$left-menu-link-hover: #757575;
+$left-menu-link-color: #fffff1;
 $left-menu-title-color: #5B626F;
 
 // -- header
 $header-height: 6rem;
 
 // -- content
-$content-background: #ffffff;
+$content-background: #2f2f2f;
 
 // Import bootstrap variables
 @import "variables.bootstrap";

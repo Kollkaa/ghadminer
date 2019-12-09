@@ -7,10 +7,12 @@
   width: calc(100vw - #{$left-menu-width});
   margin-top: $header-height;
   margin-left: $left-menu-width;
+  color: #FFFFFF;
 }
 
 .wrapper { /* stylelint-ignore */
   background: $content-background;
   min-height: 100%;
   width: 100%;
+  color: #ffffff;
 }
