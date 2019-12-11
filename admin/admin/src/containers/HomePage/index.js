@@ -44,8 +44,8 @@ export class HomePage extends React.PureComponent {
   render() {
     return(
     <div className={style.welcomeContentP}>
-      <div><img src={pages}/></div>
-      <div><a>Вас вітає адміністративна панель сайту ГШ ЗС України</a></div>
+      <img src={pages}/>
+      <div>Вас вітає адміністративна панель сайту ГШ ЗС України</div>
     </div>
     );
   }

@@ -2,7 +2,6 @@
   position: relative;
   width: calc(50% - 6px);
   height: auto;
-  margin-top: 41px;
   padding: 22px 25px 19px 96px;
   background: #F7F8F8;
   border-radius: 3px;
@@ -91,15 +90,14 @@
 .communityContentP {
   display: block;
   max-width: 49rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 51px;
+  margin: auto;
+
   color: #919BAE !important;
 }
 
 .containerFluid {
   padding: 47px 13px 0 13px;
   > div {
-    margin: 0;
   }
 }
 
@@ -275,20 +273,20 @@
 .welcomeContentP {
   background: #4b4b4b;
   color: #FFFFFF;
-  div{
+  display: block; /* Блочный элемент (для старых браузеров) */
+  text-align: center; /* Выравнивание по центру */
+  font-style: italic; /* Курсивное начертание */
+  margin-top: 0; /* Отступ сверху */
+  margin-bottom: 0px;
+  >img{
+    margin-top: 250px;
+    height: 200px;
+  }
+  >div{
+    margin-top: 40px;
+    font-size: 40px;
+  }
 
-
-  }
-  img{
-  margin-top: 300px;
-    height: 150px;
-  margin-left: 40%;
-  }
-  a{
-    margin-left: 25%;
-    font-size: 30px;
-    font-style: initial;
-  }
 }
 
 .spinner {

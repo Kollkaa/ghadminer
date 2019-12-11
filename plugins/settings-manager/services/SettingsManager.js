@@ -16,11 +16,6 @@ module.exports = {
             slug: 'application',
             name: 'menu.item.application',
             icon: 'globe'
-          },
-          {
-            slug: 'languages',
-            name: 'menu.item.languages',
-            icon: 'language'
           }
         ]
       },
@@ -31,21 +26,6 @@ module.exports = {
             slug: 'databases',
             name: 'menu.item.database',
             icon: 'database'
-          },
-          {
-            slug: 'request',
-            name: 'menu.item.request',
-            icon: 'compress'
-          },
-          {
-            slug: 'response',
-            name: 'menu.item.response',
-            icon: 'upload'
-          },
-          {
-            slug: 'security',
-            name: 'menu.item.security',
-            icon: 'shield'
           },
           {
             slug: 'server',

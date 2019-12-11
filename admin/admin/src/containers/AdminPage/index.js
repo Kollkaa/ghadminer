@@ -102,7 +102,7 @@ export class AdminPage extends React.Component {
         ReactGA.pageview(pathname);
       }
     }
-    
+
     const hasAdminPath = ['users-permissions', 'hasAdminUser'];
 
     if (
