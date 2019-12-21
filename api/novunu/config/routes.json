@@ -1,0 +1,67 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/novunus",
+      "handler": "Novunu.result",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/novunus/count",
+      "handler": "Novunu.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/novunus/:_id",
+      "handler": "Novunu.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/novunus",
+      "handler": "Novunu.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/novunus/:_id",
+      "handler": "Novunu.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/slider",
+      "handler": "Novunu.slider"
+    },
+    {
+      "method": "GET",
+      "path": "/primary",
+      "handler": "Novunu.primary"
+    },
+    {
+      "method": "GET",
+      "path": "/secondary",
+      "handler": "Novunu.secondary"
+    },
+    {
+      "method": "DELETE",
+      "path": "/novunus/:_id",
+      "handler": "Novunu.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 'use strict';
 
-/* global New */
+/* global Novunu */
 
 /**
- * New.js service
+ * Novunu.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -15,44 +15,44 @@ const { convertRestQueryParams, buildQuery } = require('strapi-utils');
 module.exports = {
 
   /**
-   * Promise to fetch all news.
+   * Promise to fetch all novunus.
    *
    * @return {Promise}
    */
 
   fetchAll: (params, populate) => {
     const filters = convertRestQueryParams(params);
-    const populateOpt = populate || New.associations
+    const populateOpt = populate || Novunu.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
 
     return buildQuery({
-      model: New,
+      model: Novunu,
       filters,
       populate: populateOpt,
     });
   },
 
   /**
-   * Promise to fetch a/an new.
+   * Promise to fetch a/an novunu.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = New.associations
+    const populate = Novunu.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return New
-      .findOne(_.pick(params, _.keys(New.schema.paths)))
+    return Novunu
+      .findOne(_.pick(params, _.keys(Novunu.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count news.
+   * Promise to count novunus.
    *
    * @return {Promise}
    */
@@ -61,64 +61,64 @@ module.exports = {
     const filters = convertRestQueryParams(params);
 
     return buildQuery({
-      model: New,
+      model: Novunu,
       filters: { where: filters.where },
     })
       .count()
   },
 
   /**
-   * Promise to add a/an new.
+   * Promise to add a/an novunu.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, New.associations.map(ast => ast.alias));
-    const data = _.omit(values, New.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Novunu.associations.map(ast => ast.alias));
+    const data = _.omit(values, Novunu.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await New.create(data);
+    const entry = await Novunu.create(data);
 
     // Create relational data and return the entry.
-    return New.updateRelations({ _id: entry.id, values: relations });
+    return Novunu.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an new.
+   * Promise to edit a/an novunu.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, New.associations.map(a => a.alias));
-    const data = _.omit(values, New.associations.map(a => a.alias));
+    const relations = _.pick(values, Novunu.associations.map(a => a.alias));
+    const data = _.omit(values, Novunu.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await New.updateOne(params, data, { multi: true });
+    const entry = await Novunu.updateOne(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return New.updateRelations(Object.assign(params, { values: relations }));
+    return Novunu.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an new.
+   * Promise to remove a/an novunu.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = New.associations
+    const populate = Novunu.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await New
+    const data = await Novunu
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -127,7 +127,7 @@ module.exports = {
     }
 
     await Promise.all(
-      New.associations.map(async association => {
+      Novunu.associations.map(async association => {
         if (!association.via || !data._id || association.dominant) {
           return true;
         }
@@ -148,22 +148,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an new.
+   * Promise to search a/an novunu.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('new', params);
+    const filters = strapi.utils.models.convertParams('novunu', params);
     // Select field to populate.
-    const populate = New.associations
+    const populate = Novunu.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(New.attributes).reduce((acc, curr) => {
-      switch (New.attributes[curr].type) {
+    const $or = Object.keys(Novunu.attributes).reduce((acc, curr) => {
+      switch (Novunu.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -187,7 +187,7 @@ module.exports = {
       }
     }, []);
 
-    return New
+    return Novunu
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

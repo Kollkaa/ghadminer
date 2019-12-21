@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/menusides",
-      "handler": "Menuside.find",
+      "path": "/forces",
+      "handler": "Родивійськ.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/menusides/count",
-      "handler": "Menuside.count",
+      "path": "/родивійськ/count",
+      "handler": "Родивійськ.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/menusides/:_id",
-      "handler": "Menuside.findOne",
+      "path": "/родивійськ/:_id",
+      "handler": "Родивійськ.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/menusides",
-      "handler": "Menuside.create",
+      "path": "/родивійськ",
+      "handler": "Родивійськ.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/menusides/:_id",
-      "handler": "Menuside.update",
+      "path": "/родивійськ/:_id",
+      "handler": "Родивійськ.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/menusides/:_id",
-      "handler": "Menuside.destroy",
+      "path": "/родивійськ/:_id",
+      "handler": "Родивійськ.destroy",
       "config": {
         "policies": []
       }

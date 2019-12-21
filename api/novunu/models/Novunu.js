@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `New` model.
+ * Lifecycle callbacks for the `Novunu` model.
  */
 
 module.exports = {

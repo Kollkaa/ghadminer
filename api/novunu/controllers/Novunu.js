@@ -1,15 +1,15 @@
 'use strict';
 
 /**
- * New.js controller
+ * Novunu.js controller
  *
- * @description: A set of functions called "actions" for managing `New`.
+ * @description: A set of functions called "actions" for managing `Novunu`.
  */
 
 module.exports = {
 
   /**
-   * Retrieve new records.
+   * Retrieve novunu records.
    *
    * @return {Object|Array}
    */
@@ -17,7 +17,7 @@ module.exports = {
   find: async (ctx, next, {populate} = {}) => {
     let url = "mongodb://192.168.0.25:27017/strapi";
     let db = require("monk")(url);
-    let collection = db.get("new",{sort:{createdAt:-1}});
+    let collection = db.get("novunu",{sort:{createdAt:-1}});
     let docs = await collection.find({},{fields:{__v:0,_id:0,date_publish:0,updatedAt:0,content:0,}});
     docs= docs.sort().reverse();
     db.close();
@@ -25,7 +25,7 @@ module.exports = {
   },
 
   /**
-   * Retrieve a new record.
+   * Retrieve a novunu record.
    *
    * @return {Object}
    */
@@ -35,47 +35,47 @@ module.exports = {
       return ctx.notFound();
     }
 
-    return strapi.services.new.fetch(ctx.params);
+    return strapi.services.novunu.fetch(ctx.params);
   },
 
   /**
-   * Count new records.
+   * Count novunu records.
    *
    * @return {Number}
    */
 
   count: async (ctx) => {
-    return strapi.services.new.count(ctx.query);
+    return strapi.services.novunu.count(ctx.query);
   },
 
   /**
-   * Create a/an new record.
+   * Create a/an novunu record.
    *
    * @return {Object}
    */
 
   create: async (ctx) => {
-    return strapi.services.new.add(ctx.request.body);
+    return strapi.services.novunu.add(ctx.request.body);
   },
 
   /**
-   * Update a/an new record.
+   * Update a/an novunu record.
    *
    * @return {Object}
    */
 
   update: async (ctx, next) => {
-    return strapi.services.new.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.novunu.edit(ctx.params, ctx.request.body) ;
   },
 
   /**
-   * Destroy a/an new record.
+   * Destroy a/an novunu record.
    *
    * @return {Object}
    */
 
   destroy: async (ctx, next) => {
-    return strapi.services.new.remove(ctx.params);
+    return strapi.services.novunu.remove(ctx.params);
   },
   slider:async (ctx)=>{
     let url = "mongodb://192.168.0.25:27017/app";
@@ -83,8 +83,8 @@ module.exports = {
     console.log("db_state", db._state);
     console.log("connecting....");
     ctx.url
-    let collection_news = db.get("new");
-    let slider = await collection_news.find({type:"slider"},{fields:{__v:0,date_publish:0,content: 0,updatedAt:0}, sort: {createdAt: -1}, limit: 5});
+    let collection_news = db.get("novunu");
+    let slider = await collection_news.find({type:"slider"},{fields:{__v:0,date_publish:0,content: 0,updatedAt:0}, sort: {createdAt: -1}, limit: 6});
     let collection_files = db.get("upload_file");
     for (let i = 0;i < slider.length;i++){
       console.log(slider[i]._id);
@@ -100,13 +100,13 @@ module.exports = {
     let db = require("monk")(url);
     console.log("db_state", db._state);
     console.log("connecting....");
-    let collection2 = db.get("new",{sort : {createdAt: -1}});
-    let primary=await collection2.find({type:"primary"},{fields:{__v:0,_id:0,date_publish:0,content: 0,updatedAt:0},limit:3});
+    let collection2 = db.get("novunu",{sort : {createdAt: -1}});
+    let primary=await collection2.find({type:"primary"},{fields:{__v:0,date_publish:0,content: 0,updatedAt:0},limit:3});
     let collection_files = db.get("upload_file");
-    for (let i = 0;i < slider.length;i++){
-      console.log(slider[i]._id);
-      let img = await collection_files.findOne({related: {$elemMatch: {ref: slider[i]._id}}});
-      slider[i].imgRef = img;
+    for (let i = 0;i < primary.length;i++){
+      console.log(primary[i]._id);
+      let img = await collection_files.findOne({related: {$elemMatch: {ref: primary[i]._id}}});
+      primary[i].imgRef = img;
     }
     db.close();
     ctx.send(primary);
@@ -116,7 +116,7 @@ module.exports = {
     let db = require("monk")(url);
     console.log("db_state", db._state);
     console.log("connecting....");
-    let collection3 = db.get("new",{sort:{createdAt:-1}});
+    let collection3 = db.get("novunu",{sort:{createdAt:-1}});
     let secondary;
     console.log(ctx.url);
     try {
@@ -180,5 +180,4 @@ module.exports = {
     console.log(result);
     ctx.send(result);
   }
-
 };

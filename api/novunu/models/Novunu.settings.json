@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "new",
+  "collectionName": "",
   "info": {
-    "name": "new",
+    "name": "novunu",
     "description": ""
   },
   "options": {
@@ -26,11 +26,10 @@
         "primary",
         "secondary"
       ],
-      "type": "enumeration",
-      "default": "slider"
+      "type": "enumeration"
     },
     "description": {
-      "maxLength": 60,
+      "maxLength": 70,
       "type": "string"
     }
   }

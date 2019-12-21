@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "menuside",
+  "collectionName": "typeforce",
   "info": {
-    "name": "menuside",
+    "name": "родивійськ",
     "description": ""
   },
   "options": {
@@ -11,9 +11,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "order": {
-      "type": "integer"
     },
     "image": {
       "model": "file",
