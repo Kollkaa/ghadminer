@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "footer",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "useful",
+        "quality"
+      ],
+      "default": "useful",
+      "type": "enumeration"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

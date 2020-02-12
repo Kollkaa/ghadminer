@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "novunu",
   "info": {
     "name": "novunu",
     "description": ""
@@ -16,7 +16,7 @@
       "type": "text"
     },
     "image": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "plugin": "upload"
     },

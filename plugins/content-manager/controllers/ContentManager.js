@@ -1,7 +1,6 @@
 'use strict';
-
 const _ = require('lodash');
-
+const RSSCreator =require('./RssCreator');
 /**
  * A set of functions called "actions" for `ContentManager`
  */
@@ -70,6 +69,31 @@ module.exports = {
       strapi.log.error(error);
       ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: error.message, field: error.field }] }] : error.message);
     }
+
+
+    let url = "mongodb://192.168.0.25:27017/app";
+    let db = require("monk")(url);
+    console.log("db_state", db._state);
+    console.log("connecting....");
+    let collection_news = db.get("novunu");
+    let allNews = await collection_news.find({},{fields:{__v:0,date_publish:0,updatedAt:0}, sort: {createdAt: -1}});
+    console.log(allNews);
+    db.close();
+    const testData = {
+      feedData: {
+        title: "Rss chanell Armed Forces of Ukraine",
+        description: `Join us`,
+        urlHome: `http://localhost:3000`,
+        icon: `icon.jpg`,
+        company: `Збройні сили України`,
+        language: `ua`,
+        pubDate: Date.now(),
+      },
+      news: allNews
+    };
+    const rss= new RSSCreator.RSSCreator(testData);
+    rss.write();
+
   },
 
   update: async ctx => {
@@ -99,6 +123,40 @@ module.exports = {
 
   delete: async ctx => {
     ctx.body = await strapi.plugins['content-manager'].services['contentmanager'].delete(ctx.params, ctx.request.query);
+    let url = "mongodb://192.168.0.25:27017/app";
+    let db = require("monk")(url);
+    console.log("db_state", db._state);
+    console.log("connecting....");
+    let collection_news = db.get("novunu");
+    let allNews = await collection_news.find({},{fields:{__v:0,date_publish:0,updatedAt:0}, sort: {createdAt: -1}});
+    console.log(allNews);
+    db.close();
+
+    const allNewsProcessed = allNews.map(item => {
+      console.log(item)
+      return {
+        name: `${item.name}`,
+        description: `${item.description}`,
+        content: `${item.content}`,
+        type: `${item.type}`,
+        image: `${item.image}`,
+        createdAt: `${item.createdAt}`,
+      }
+    })
+    const testData = {
+      feedData: {
+        title: "Rss chanell Armed Forces of Ukraine",
+        description: `Join us`,
+        urlHome: `http://localhost:3000`,
+        icon: `icon.jpg`,
+        company: `Збройні сили України`,
+        language: `ua`,
+        pubDate: Date.now(),
+      },
+      news: allNewsProcessed
+    };
+    const rss= new RSSCreator.RSSCreator(testData);
+    rss.write();
   },
 
   deleteAll: async ctx => {

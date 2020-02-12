@@ -15,13 +15,11 @@ module.exports = {
    */
 
   find: async (ctx, next, {populate} = {}) => {
-    let url = "mongodb://192.168.0.25:27017/strapi";
-    let db = require("monk")(url);
-    let collection = db.get("novunu",{sort:{createdAt:-1}});
-    let docs = await collection.find({},{fields:{__v:0,_id:0,date_publish:0,updatedAt:0,content:0,}});
-    docs= docs.sort().reverse();
-    db.close();
-    ctx.send(docs);
+    if (ctx.query._q) {
+      return strapi.services.novunu.search(ctx.query);
+    } else {
+      return strapi.services.novunu.fetchAll(ctx.query, populate);
+    }
   },
 
   /**
@@ -77,6 +75,7 @@ module.exports = {
   destroy: async (ctx, next) => {
     return strapi.services.novunu.remove(ctx.params);
   },
+
   slider:async (ctx)=>{
     let url = "mongodb://192.168.0.25:27017/app";
     let db = require("monk")(url);
@@ -179,5 +178,22 @@ module.exports = {
     result=[...JSON.parse(slider), ...JSON.parse(secondary), ...JSON.parse(primary)];
     console.log(result);
     ctx.send(result);
+  },
+  rss: async (ctx)=>{
+    const xml2js = require('xml2js');
+    const fs = require('fs');
+    const parser = new xml2js.Parser({ attrkey: "ATTR" });
+    let xml_string = fs.readFileSync("rss.xml");
+    ctx.send(xml_string);
+    parser.parseString(xml_string, function(error, result) {
+      if(error === null) {
+        console.log(result);
+
+      }
+      else {
+        console.log(error);
+      }
+    });
+
   }
 };
