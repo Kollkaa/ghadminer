@@ -19,6 +19,11 @@
     },
     "href": {
       "type": "string"
+    },
+    "emblema": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

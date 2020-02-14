@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/blocks",
+      "handler": "Інформація.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/інформація/count",
+      "handler": "Інформація.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/інформація/:_id",
+      "handler": "Інформація.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/інформація",
+      "handler": "Інформація.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/інформація/:_id",
+      "handler": "Інформація.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/інформація/:_id",
+      "handler": "Інформація.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

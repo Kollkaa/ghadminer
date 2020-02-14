@@ -100,7 +100,7 @@ module.exports = {
     console.log("db_state", db._state);
     console.log("connecting....");
     let collection2 = db.get("novunu",{sort : {createdAt: -1}});
-    let primary=await collection2.find({type:"primary"},{fields:{__v:0,date_publish:0,content: 0,updatedAt:0},limit:3});
+    let primary=await collection2.find({type:"primary"},{fields:{__v:0,date_publish:0,content: 0,updatedAt:0},limit:5});
     let collection_files = db.get("upload_file");
     for (let i = 0;i < primary.length;i++){
       console.log(primary[i]._id);
