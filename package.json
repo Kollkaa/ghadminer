@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "monk": "^7.1.1",
     "react-day-picker": "^7.4.0",
     "rss": "^1.2.2",
