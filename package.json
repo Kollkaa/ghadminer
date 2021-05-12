@@ -27,7 +27,7 @@
     "monk": "^7.1.1",
     "react-day-picker": "^7.4.0",
     "rss": "^1.2.2",
-    "strapi": "3.0.0-alpha.26.2",
+    "strapi": "3.2.5",
     "strapi-hook-mongoose": "3.0.0-alpha.26.2",
     "strapi-utils": "3.0.0-alpha.26.2"
   },
