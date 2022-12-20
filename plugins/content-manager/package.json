@@ -33,7 +33,7 @@
   "bundleDependencies": false,
   "dependencies": {
     "pluralize": "^7.0.0",
-    "strapi-utils": "3.0.0-alpha.26.2"
+    "strapi-utils": "3.6.11"
   },
   "deprecated": false,
   "description": "A powerful UI to easily manage your data.",
